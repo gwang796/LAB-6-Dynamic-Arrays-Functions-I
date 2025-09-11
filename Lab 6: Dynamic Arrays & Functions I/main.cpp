@@ -42,18 +42,21 @@ int main(int argc, const char * argv[]) {
 
 void enterArrayData(double *arr, int SIZE){
     cout << "Data entry for the array:" << endl;
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE; i++) { //looping to input SIZE number of values
         cout << setw(WIDTH) << "> Element #" << i + 1 << ": ";
-        cin >> *(arr + i);
+        cin >> *(arr + i); //pointer notation
     }
+    //NOTE: if user inputs string or char program will fail.
+    //Input validation is has not been covered yet so assumes
+    //valid input
     cout << "Data entry complete" << endl;
 }
 
 void outputArrayData(double *arr, int SIZE){
     cout << "Outputting array elements: ";
     cout << fixed << setprecision(1); //shows .0 at end if whole number
-    for (int i = 0; i < SIZE; i++) {
-        cout << " " <<*(arr + i);
+    for (int i = 0; i < SIZE; i++) { //looping to print SIZE number of values
+        cout << " " <<*(arr + i); //pointer notation
     }
     cout << endl;
 }
@@ -61,7 +64,7 @@ void outputArrayData(double *arr, int SIZE){
 double sumArray(double *arr, int SIZE){
     double total = 0.0;
     for (int i = 0; i < SIZE; i++) {
-        total += *(arr + i);
+        total += *(arr + i); //pointer notation
     }
     return total;
 }
