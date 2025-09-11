@@ -36,6 +36,7 @@ int main(int argc, const char * argv[]) {
     outputArrayData(dArray,SIZE); //call outputArrayData
     double totalSum = sumArray(dArray,SIZE); //call sumArray
     cout << "Sum of values: " << totalSum << endl; //printing sum
+    delete[] dArray;
     return 0;
 }
 
