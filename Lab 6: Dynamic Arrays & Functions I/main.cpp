@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //function enterArrayData has user enter in data
@@ -20,25 +21,43 @@ void outputArrayData(double *arr, int SIZE);
 
 //function sumArray adds all inputted data together
 //argument: double array
-//return: none
-void sumArray(double *arr, int SIZE);
+//return: double
+double sumArray(double *arr, int SIZE);
 
-const int WIDTH = 5;
+const int WIDTH = 15;
 
 int main(int argc, const char * argv[]) {
     const int SIZE = 5;
     double *dArray = nullptr;
     dArray = new double[SIZE];
-    //enterArrayData(dArray,SIZE)
-    //outputArrayData(dArray,SIZE)
-    //sumArrray(dArray,SIZE)
+    enterArrayData(dArray,SIZE);
+    outputArrayData(dArray,SIZE);
+    totalSum = sumArrray(dArray,SIZE);
+    cout << "Sum of values: " << totalSum;
     return 0;
 }
 
 void enterArrayData(double *arr, int SIZE){
     cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; i++) {
-        cout << set(WIDTH) << "> Element #" << i << ": ";
-        
+        cout << setw(WIDTH) << "> Element #" << i + 1 << ": ";
+        cin >> *(arr + i);
     }
+    cout << "Data entry complete" << endl;
+}
+
+void outputArrayData(double *arr, int SIZE){
+    cout << "Outputting array elements: ";
+    for (int i = 0; i < SIZE; i++) {
+        cout << " " <<*(arr + i);
+    }
+    cout << endl;
+}
+
+double sumArray(double *arr, int SIZE){
+    double total = 0.0;
+    for (int i = 0; i < SIZE; i++) {
+        total += *(arr + i);
+    }
+    return total;
 }
