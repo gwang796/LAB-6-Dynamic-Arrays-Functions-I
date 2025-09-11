@@ -27,13 +27,15 @@ double sumArray(double *arr, int SIZE);
 const int WIDTH = 15;
 
 int main(int argc, const char * argv[]) {
-    const int SIZE = 5;
+    const int SIZE = 5; //declare SIZE
+    //declaring dynamic double array
     double *dArray = nullptr;
     dArray = new double[SIZE];
-    enterArrayData(dArray,SIZE);
-    outputArrayData(dArray,SIZE);
-    totalSum = sumArrray(dArray,SIZE);
-    cout << "Sum of values: " << totalSum;
+    
+    enterArrayData(dArray,SIZE); //call enterArrayData
+    outputArrayData(dArray,SIZE); //call outputArrayData
+    double totalSum = sumArray(dArray,SIZE); //call sumArray
+    cout << "Sum of values: " << totalSum << endl; //printing sum
     return 0;
 }
 
@@ -48,6 +50,7 @@ void enterArrayData(double *arr, int SIZE){
 
 void outputArrayData(double *arr, int SIZE){
     cout << "Outputting array elements: ";
+    cout << fixed << setprecision(1); //shows .0 at end if whole number
     for (int i = 0; i < SIZE; i++) {
         cout << " " <<*(arr + i);
     }
