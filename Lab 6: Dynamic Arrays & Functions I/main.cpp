@@ -10,21 +10,21 @@
 using namespace std;
 
 //function enterArrayData has user enter in data
-//argument: double array
+//argument: dynamic double array, int SIZE
 //return: none
 void enterArrayData(double *arr, int SIZE);
 
 //function outputArrayData prints inputted data
-//argument: double array
+//argument: dynamic double array, int SIZE
 //return: none
 void outputArrayData(double *arr, int SIZE);
 
 //function sumArray adds all inputted data together
-//argument: double array
+//argument: dynamic double array, int SIZE
 //return: double
 double sumArray(double *arr, int SIZE);
 
-const int WIDTH = 15;
+const int WIDTH = 15; //for setw()
 
 int main(int argc, const char * argv[]) {
     const int SIZE = 5; //declare SIZE
